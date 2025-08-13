@@ -1,7 +1,25 @@
 function  onlyCharacter( str ) {
-   str
+   if (typeof str === "string") {
+    let strToArray = str.trim().split("");
+    let characterArray = [];
+    for (const word of strToArray) {
+        if(word === " "){ 
+            continue 
+        };
+        characterArray.push(word);
+    }
+
+    let arrayToStr = characterArray.join("").toUpperCase();
+    
+    return arrayToStr;
+
+   } 
+   else {
+    return "Invalid"
+   }
 
 
 }
 
-console.log("he l lo  xn".trim())
+console.log(onlyCharacter(true));
+
